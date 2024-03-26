@@ -25,17 +25,15 @@ def main():
         st.image(img, caption='Imagen subida.', use_column_width=True)
         img_b64 = base64.b64encode(img_file.getvalue()).decode()
 
-    if st.button("Describir imagen como texto"):
-        if img_b64 is not None: 
-            with st.spinner('Analizando imagen...'):
-                text = text_output(img_b64)
-            st.text_area("Texto resultante:", text, height=400)
+    if st.button("Describir imagen como texto") and img_b64 is not None:
+        with st.spinner('Analizando imagen...'):
+            text = text_output(img_b64)
+        st.text_area("Texto resultante:", text, height=400)
 
-    if st.button("Guardar tags en S3"):
-        if img_b64 is not None: 
-            with st.spinner('Guardando en S3...'):
-                compute_text = compute(img_b64, year, designer, temporada)
-                st.write(compute_text)
+    if st.button("Guardar tags en S3") and img_b64 is not None:
+        with st.spinner('Guardando en S3...'):
+            compute_text = compute(img_b64, year, designer, temporada)
+            st.write(compute_text)
 
 if __name__ == "__main__":
     main()
