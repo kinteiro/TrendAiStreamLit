@@ -12,7 +12,7 @@ img_b64 = None
 
 def main():
     curr_year = datetime.now().year
-    st.title("Descripción de imágenes con OpenAI GPT-4 Vision.")
+    st.title("Descripción de moda con GPT-4 Vision y etiquetado en S3") 
     year = st.number_input("Año de la imagen", min_value=1930, max_value=int(curr_year + 1), value=curr_year)
     designer = st.text_input("Diseñador de la imagen", "Diseñador")
     temporada = st.selectbox("Temporada de la imagen", opciones)
