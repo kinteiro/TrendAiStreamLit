@@ -1,3 +1,4 @@
+# [trendaiapp.streamlit.app](https://trendaiapp.streamlit.app)
 # Proyecto de Streamlit con GPT-4 Vision y carga a S3
 
 Este proyecto utiliza Streamlit junto con GPT-4 Vision para crear una aplicación web interactiva que permite ingestar manualmente imágenes desde la app a un bucket de S3 para su posterior analálisis o bien crear una descripcion detallada para la ayuda de generar un copywriting de dicha imagen
