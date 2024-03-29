@@ -11,6 +11,10 @@ _ROOT = Path(__file__).parent
 with open (f"{_ROOT}/image_description_promt.txt", "r") as text_file:
     image_descipcion_prompt=text_file.read()
 
+with open(f"{_ROOT}/System_description_prompt.txt", "r") as text_file:
+    system_prompt = text_file.read()
+
+
 # Function to encode the image
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
@@ -45,7 +49,7 @@ def text_output(base64_image):
             },
             {
                 "role": "system",
-                "content": "Eres el mejor analista de datos experto en moda, diseño marcas de moda y telas, cuando ves una imagen describes lo que ves desde los ojos de un experto en moda, diseño marcas de moda y telas."
+                "content": system_prompt
             }
             
         ],
